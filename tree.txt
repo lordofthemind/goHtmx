@@ -1,0 +1,10 @@
+.
+├── main.go
+├── static
+│   └── index.css
+├── stocks.go
+├── templates
+│   └── index.html
+└── tree.txt
+
+2 directories, 5 files
