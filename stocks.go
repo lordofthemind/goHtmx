@@ -22,7 +22,8 @@ type Values struct {
 }
 
 func SearchTicker(ticker string) []Stock {
-	resp, err := http.Get(PolygonPath + "/v3/refrence/tickers?" + ApiKey + "&ticker=" + strings.ToUpper(ticker))
+	resp, err := http.Get(PolygonPath + "/v3/reference/tickers?" +
+		ApiKey + "&ticker=" + strings.ToUpper(ticker))
 	if err != nil {
 		log.Fatal(err)
 	}

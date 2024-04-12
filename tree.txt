@@ -1,10 +1,13 @@
 .
+├── go.mod
 ├── main.go
 ├── static
 │   └── index.css
 ├── stocks.go
 ├── templates
+│   ├── fragments
+│   │   └── resuts.html
 │   └── index.html
 └── tree.txt
 
-2 directories, 5 files
+3 directories, 7 files

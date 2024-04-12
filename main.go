@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/static/",
+		http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.ParseFiles("./templates/index.html"))
@@ -29,10 +30,11 @@ func main() {
 			stk := SearchTicker(ticker)[0]
 			val := GetDailyValues(ticker)
 			tmpl := template.Must(template.ParseFiles("./templates/index.html"))
-			tmpl.ExecuteTemplate(w, "stock-element", Stock{Ticker: stk.Ticker, Name: stk.Name, Price: val.Open})
+			tmpl.ExecuteTemplate(w, "stock-element",
+				Stock{Ticker: stk.Ticker, Name: stk.Name, Price: val.Open})
 		}
 	})
 
-	log.Println("App running on 9090....")
+	log.Println("App running on 9090...")
 	log.Fatal(http.ListenAndServe(":9090", nil))
 }
